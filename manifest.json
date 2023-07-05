@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Codechef Notifier",
+    "version": "1.0",
+    "description": "Automated Codechef Verdict Notifier",
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "permissions": [
+      "tabs",
+      "notifications"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.codechef.com/submit/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
